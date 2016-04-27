@@ -1,0 +1,251 @@
+/* Basic boilerplate */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Body changes */
+body {
+	background-color: rgb(255,255,255);
+	font-family: Arial;
+	color: rgb(51,51,51);
+	font-size: 9px;
+}
+	.space_it {
+		padding: 13px 20px 12px 20px !important;
+		border-bottom: 1px dotted rgb(228,228,228);
+	}
+
+	.reviews, .guestbook {
+		width: 300px;
+		margin: 20px;
+		border: 1px solid rgb(228,228,228);
+		border-radius: 6px;
+	}
+
+		.reviews_head, .guestbook_head {
+			padding-bottom: 12px;
+			height: 12px;
+		}
+
+			.reviews_head > div, .guestbook_head > div {
+				float: left;
+			}
+
+		.reviews_title, .guestbook_title {
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.reviews_rating {
+			margin-left: 100px;
+		}
+
+		.reviews_rating:after {
+			content: "(" attr(data-numratings) ")";
+			color: rgb(25,156,227);
+			font-size: 12px;
+			margin-left: 2px;
+		}
+			.reviews_rating > .reviews_house {
+				float: left;
+				width: 15px;
+				height: 19px;
+				margin-right: 2px;
+			}
+
+			.reviews_rating > .reviews_house:before {
+				width: 15px;
+				content: " ";
+				background-image: url(images/sprites.png);
+				height: 19px;
+				position: absolute;
+				background-position: 0 -19px;
+			}
+
+			.reviews_rating[data-ratingvalue="1"] > .reviews_house:nth-child(-n+1):before,
+			.reviews_rating[data-ratingvalue="2"] > .reviews_house:nth-child(-n+2):before,
+			.reviews_rating[data-ratingvalue="3"] > .reviews_house:nth-child(-n+3):before,
+			.reviews_rating[data-ratingvalue="4"] > .reviews_house:nth-child(-n+4):before,
+			.reviews_rating[data-ratingvalue="5"] > .reviews_house:nth-child(-n+5):before
+
+			{
+				width: 15px;
+				content: " ";
+				background-image: url(images/sprites.png);
+				height: 19px;
+				position: absolute;
+				background-position: 0 0;
+			}
+
+
+		.reviews_100pc[data-hundredpc="0"] {
+			display: none;
+		}
+
+		.reviews_100pc:before {
+			content: "100% recommended from " attr(data-hundredpc) " guests";
+		}
+
+		.review_comments {
+
+		}
+
+			.review_comment {
+				border-bottom: 1px dotted rgb(228,228,228);
+				padding: 13px 20px 55px 20px;
+			}
+
+			.review_comment:nth-child(n+7) {
+				border-bottom: none !important; /* removes 8th review's bottom border */
+			}
+
+			.review_comment:nth-last-child(-n+2) {
+				display: none; /* hides 2nd to 8th positions */
+			}
+
+
+
+				.comments {
+				  quotes: "\201c" "\201d" "\2018" "\2019";
+				  /* That's in order, left double open quote, right double open quote, single left open quote and right single open quote */
+				}
+				
+				.comments > p:nth-child(1):before {
+					content: open-quote; /* First paragraph opens with a double quote */
+				}
+				.comments > p:last-of-type:after {
+					content: close-quote; /* Last paragraph closes with a doble quote */
+				}
+
+				.details {
+					font-weight: bold;
+					float: left;
+				}
+				.details > p {
+					line-height: 0.5;
+				}
+
+				.details > .review_name:after {
+					content: " " attr(data-reviewname);
+				}
+				.details > .review_date:after {
+					content: " " attr(data-reviewdate);
+				}
+				.details > .review_staydate:after {
+					content: " " attr(data-staydate);
+				}
+			.comment_rating {
+				float: left;
+				margin-left: 38px;
+				margin-top: 25px;
+			}
+
+				.comment_rating > .comment_house {
+					float: left;
+					width: 15px;
+					height: 19px;
+					margin-right: 2px;
+				}
+
+				.comment_rating > .comment_house:before {
+					width: 15px;
+					content: " ";
+					background-image: url(images/sprites.png);
+					height: 19px;
+					position: absolute;
+					background-position: 0 -19px;
+				}
+
+				.comment_rating[data-rating="1"] > .comment_house:nth-child(-n+1):before,
+				.comment_rating[data-rating="2"] > .comment_house:nth-child(-n+2):before,
+				.comment_rating[data-rating="3"] > .comment_house:nth-child(-n+3):before,
+				.comment_rating[data-rating="4"] > .comment_house:nth-child(-n+4):before,
+				.comment_rating[data-rating="5"] > .comment_house:nth-child(-n+5):before
+				{
+					width: 15px;
+					content: " ";
+					background-image: url(images/sprites.png);
+					height: 19px;
+					position: absolute;
+					background-position: 0 0;
+				}
+
+				.review_read_comments {
+			 		padding: 10px 20px 20px !important;
+				}
+
+					.read_reviews_text {					
+				 		cursor: pointer;
+					}
+
+					.read_reviews_text:before {
+						content: "Read all " attr(data-numratings) " reviews";
+						color: rgb(25,156,227);
+						font-weight: bold;
+
+					}
+					.read_reviews_text:after {
+						width: 5px;
+						content: " ";
+						background-image: url(images/sprites.png);
+						height: 10px;
+						position: absolute;
+						background-position: -22px -0px;
+						margin-left: 3px;
+					}
+				#chk {
+					display: none;
+				}
+
+				#chk:checked ~ .review_comments > .review_comment:nth-last-child(-n+7) {
+					display: block;
+				}
+
+				#chk:checked ~ .review_read_comments > .read_reviews_text:before {
+					content: "Show less reviews";
+					color: rgb(25,156,227);
+					font-weight: bold;
+
+				}
+
+				#chk:checked ~ .review_read_comments > .read_reviews_text:after {
+					width: 5px;
+					content: " ";
+					background-image: url(images/sprites.png);
+					height: 10px;
+					position: absolute;
+					background-position: -15px -0px;
+					margin-left: 3px;
+				}
+
+				.guestbook_link, .guestbook_submit {
+					/* The following CSS rendered with thanks to Ultimate CSS Gradient Generator (http://www.colorzilla.com/gradient-editor/) */
+
+					background: #7ec73c; /* Old browsers */
+					background: -moz-linear-gradient(top, #7ec73c 0%, #5ea71c 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(top, #7ec73c 0%,#5ea71c 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to bottom, #7ec73c 0%,#5ea71c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ec73c', endColorstr='#5ea71c',GradientType=0 ); /* IE6-9 */
+					color: white;
+					text-decoration: none;
+					text-align: center;
+					vertical-align: middle;
+					border-radius: 3px;
+					border: 1px solid rgb(127,200,61);
+					padding: 9px 16px 10px 16px;'
+					font-weight: bold;
+				}
+
+				.heading {
+					font-weight: bold;
+				}
+
+				.guestbook_entry {
+					padding: 13px 20px 55px 20px;
+				}
+
+					.entry {
+						width: 120px;
+						height: 100px;
+					}

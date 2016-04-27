@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Stayz Demo</title>
+	  <link rel="stylesheet" type="text/css" href="stayz.css">
+	</head>
+
+	<body>
+
+	  <!-- 
+		Rules:
+	* Only the reviews module HTML should exist within the HTML body.
+
+	^^ And guess what, the HTML is the only thing in there! Woohoo!
+
+	* Use HTML5 DOCTYPE but make sure layout renders properly in all browsers
+	without the need for JavaScript e.g. HTML5 JavaScript shim.
+
+	^^ 
+	Done
+
+	* Browser support:
+	 -> IE8+
+	 -> Google Chrome (latest)
+	 -> Firefox (latest)
+	^^ Tested
+
+	* The design of the reviews module does not need to look the same in all 
+	browsers. We are happy for the design to degrade gracefully in older less 
+	capable browsers.
+
+	^^ Good to know!
+
+	* Reviews module must be accessible e.g. cater for non-JavaScript users.
+	^^ Catered...
+
+	* HTML5 must be 100% valid, use: http://html5.validator.nu/ to validate. CSS
+	does not need to be 100% valid.
+	^^ Validated
+
+	* The following images: ratingscore-on/off.png and toggle-open/close.png do 
+	not have to be used exactly how we’ve provided them.
+	^^ Rendered all images as sprite sheet... The clue was in that they "[didn't] have to be 
+	used exactly how we’ve provided them..." 
+
+	So, there you go, it is possible to get some pretty cool stuff working on HTML and CSS alone!
+
+	-->
+
+	  <div class="reviews">
+	    <div class="reviews_head space_it">
+	      <div class="reviews_title">Reviews</div>
+	      <div class="reviews_rating" data-ratingvalue="5" data-numratings="2">
+	        <div class="reviews_house"></div>
+	        <div class="reviews_house"></div>
+	        <div class="reviews_house"></div>
+	        <div class="reviews_house"></div>
+	        <div class="reviews_house"></div>
+	      </div>
+	    </div>
+	    <div class="reviews_100pc space_it" data-hundredpc="2"></div>
+	    <input type="checkbox" id="chk">
+	    <div class="review_comments">
+	      <div class="review_comment" id="cmnt_000001">
+	        <div class="comments">
+	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla profecto est, quin suam vim retineat a primo ad extremum. Praeclarae mortes sunt imperatoriae; Nunc de hominis summo bono quaeritur; Quamquam tu hanc copiosiorem etiam soles dicere.</p>
+	        </div>
+	        <div class="details">
+	          <p class="review_name" data-reviewname="Maria">Reviewer:</p>
+	          <p class="review_date" data-reviewdate="Nov 2010">Reviewer date:</p>
+	          <p class="review_staydate" data-staydate="Sep 2010">Stay date:</p>
+	        </div>
+	        <div class="comment_rating" data-rating="5">
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	        </div>
+	      </div>
+	      <div class="review_comment" id="cmnt_000002">
+	        <div class="comments">
+	          <p>Positum est a nostris in iis esse rebus, quae secundum naturam essent, non dolere; Praeclare hoc quidem. Cum id fugiunt, re eadem defendunt, quae Peripatetici, verba.</p>
+	          <p>Na et complectitur verbis, quod vult, et dicit plane, quod intellegam; Quamvis enim depravatae non sint, pravae tamen esse possunt. Primum divisit ineleganter; Negat esse eam, inquit, propter se expetendam. Quod autem principium officii quaerunt, melius quam Pyrrho; Dempta enim aeternitate nihilo beatior Iuppiter quam Epicurus; Nosti, credo, illud: Nemo pius est, qui pietatem.</p>
+	        </div>
+	        <div class="details">
+	          <p class="review_name" data-reviewname="Christopher">Reviewer:</p>
+	          <p class="review_date" data-reviewdate="Nov 2010">Reviewer date:</p>
+	          <p class="review_staydate" data-staydate="Sep 2010">Stay date:</p>
+	        </div>
+	        <div class="comment_rating" data-rating="4">
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	        </div>
+	      </div>
+	      <div class="review_comment" id="cmnt_000003">
+	        <div class="comments">
+	          <p>Itaque his sapiens semper vacabit. Duo Reges: constructio interrete. Quo studio Aristophanem putamus aetatem in litteris duxisse? Dulce amarum, leve asperum, prope longe, stare movere, quadratum rotundum.</p>
+	          <p>Obsecro, inquit, Torquate, haec dicit Epicurus? Sed tamen intellego quid velit. Quam si explicavisset, non tam haesitaret. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? </p>
+	        </div>
+	        <div class="details">
+	          <p class="review_name" data-reviewname="Bob">Reviewer:</p>
+	          <p class="review_date" data-reviewdate="Nov 2010">Reviewer date:</p>
+	          <p class="review_staydate" data-staydate="Sep 2010">Stay date:</p>
+	        </div>
+	        <div class="comment_rating" data-rating="2">
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	          <div class="comment_house"></div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="review_read_comments">
+	      <label class="read_reviews_text" data-numratings="3" for="chk"></label><br><br>
+	      <a class="guestbook_link" href="guestbook.html">Leave a guestbook entry</a><br>
+	    </div>
+	  </div>
+	</body>
+</html>
